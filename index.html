@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>My To-Do List</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<main class="app">
+
+    <header class="header">
+        <div>
+            <p class="eyebrow">STAY FOCUSED</p>
+            <h1>My To-Do List<span>.</span></h1>
+            <p class="muted">Plan your day, one task at a time.</p>
+        </div>
+
+        <div class="logo">✓</div>
+    </header>
+
+    <!-- Add Task Section -->
+    <section class="add-panel">
+
+        <h2>Add a task</h2>
+
+        <form id="taskForm">
+
+            <label class="sr-only" for="taskInput">
+                Enter a task
+            </label>
+
+            <input
+                id="taskInput"
+                type="text"
+                maxlength="120"
+                placeholder="What do you need to do?"
+                required
+            >
+
+            <button class="add-btn" type="submit">
+                Add task ＋
+            </button>
+
+        </form>
+
+        <p id="message" aria-live="polite"></p>
+
+    </section>
+
+    <!-- Task List Section -->
+    <section class="tasks-section">
+
+        <div class="section-heading">
+
+            <div>
+                <p class="eyebrow">YOUR TASKS</p>
+                <h2>Today's list</h2>
+            </div>
+
+            <p class="muted">
+                <strong id="remainingCount">0</strong>
+                remaining
+            </p>
+
+        </div>
+
+        <!-- Filter Buttons -->
+        <div class="toolbar">
+
+            <div class="filters">
+
+                <button
+                    type="button"
+                    class="filter active"
+                    data-filter="all">
+                    All
+                </button>
+
+                <button
+                    type="button"
+                    class="filter"
+                    data-filter="active">
+                    Active
+                </button>
+
+                <button
+                    type="button"
+                    class="filter"
+                    data-filter="completed">
+                    Completed
+                </button>
+
+            </div>
+
+            <button
+                type="button"
+                id="clearCompleted"
+                class="clear-btn">
+                Clear completed
+            </button>
+
+        </div>
+
+        <!-- Dynamic Tasks -->
+        <ul id="taskList" class="task-list"></ul>
+
+        <!-- Empty Message -->
+        <div id="emptyState" class="empty">
+
+            <div>✦</div>
+
+            <h3>No tasks here yet</h3>
+
+            <p>
+                Add a task above and make today productive.
+            </p>
+
+        </div>
+
+    </section>
+
+    <footer>
+        <span>Made with HTML, CSS & JavaScript</span>
+        <span>Tasks stay saved in this browser</span>
+    </footer>
+
+</main>
+
+<script src="script.js"></script>
+
+</body>
+</html>
